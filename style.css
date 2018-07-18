@@ -1,0 +1,174 @@
+body{
+    background-color: #efeee7;
+    font-family: "Georgia",Times New Roman,Times,serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;     
+
+}
+
+
+nav{
+    height: 3em;
+    border-bottom: 0.1em solid gray;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.nameBar{    
+    float: left;
+    color: #777;
+    font-size: 1.5em;
+}
+
+.name{    
+    background-color: lightblue;
+    line-height: 2em;
+    padding: .5em;
+    padding-bottom: .45em;    
+    margin-left: 7.9em;
+}
+
+.navBar{
+    float: right;         
+}
+
+ul{
+    list-style-type: none;
+    padding-right: 11.5em;
+    
+}
+
+li{    
+    float: left;
+    padding-right: 1em; 
+
+}
+
+.navLinks:link, .navLinks:visited, .navLinks:hover, .navLinks:active  {
+    text-decoration: none;
+    color: #777;
+}
+
+.container{
+    width: 970px;    
+    margin: auto;
+    margin-top: 1.5em;
+    margin-bottom: 2em;   
+    background-color: white;
+    height: 33em;
+
+}
+
+.portfolioContainer{
+    width: 970px;    
+    margin: auto;
+    margin-top: 1.5em;
+    margin-bottom: 2em;   
+    background-color: white;
+    height: 63em;
+}
+
+h1{
+    color: lightskyblue;
+    font-size: 27px;
+    margin-left: 1em;
+    padding-top: .5em;    
+}
+
+.aboutMe, .portfolio, .contact{
+    border-bottom: 0.1em solid gray;    
+}
+
+.mainBio, .contactMain{
+    height: 35em;
+    background-color: white;    
+}
+
+.me{
+    float: left;
+    width: 15em;
+    height: 15em;
+    margin-left: 2em;
+    margin-top: .3em;
+    margin-right: 1em;
+}
+
+.bioText{  
+    margin-top: 1.5em;    
+    line-height: 2em;
+    padding-right: 2em;
+    padding-left: 2em;    
+}
+
+.footer{    
+    height: 3em;
+    width: 100%;
+    background-color: #333333;
+    border-top: .5em solid lightblue;      
+    bottom: 0;    
+    margin-bottom: 0;    
+}
+
+center{
+    color: white;
+    margin-top: .5em;
+}
+
+.portfolioImg{
+    height: 15em;
+    width: 15em;
+}
+
+.portfolioText{
+    text-align: center;
+    size: small;
+}
+
+.contactDiv{
+    padding-bottom: 1.5em;
+}
+
+table{
+    margin-left: 2em;
+    margin-top: 2.5em;
+    
+}
+
+form{
+    margin-top: 1em;    
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label{
+    margin-left: 1em;
+}
+
+#message{
+    height: 15em;
+}
+
+
+input[type=submit] {
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 1em;    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
