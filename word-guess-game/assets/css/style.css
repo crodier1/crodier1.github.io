@@ -1,0 +1,45 @@
+body, html{
+    background: linear-gradient(black, red);
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat:no-repeat;
+    color: white;
+    text-align: center;
+    font-family: 'Metal Mania', cursive;
+    overflow: auto;    
+}
+
+img{
+    width: 30em;
+    height: 25em;
+    padding: 0.5em;
+}
+
+h1{
+    font-size: 10em;
+    margin-bottom: 0.1em;    
+}
+
+p, span{
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: .2em;
+    padding: 0.5em;
+}
+
+.row{
+    border: white dashed .5em;
+}
+
+#winDiv{
+    border-right:  white dashed .5em;
+    padding: 1em;
+}
+
+.btn{
+    letter-spacing: .2em;
+}
+
