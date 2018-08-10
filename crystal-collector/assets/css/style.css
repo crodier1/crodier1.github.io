@@ -1,0 +1,73 @@
+body, html{
+    background: linear-gradient(aqua, white);
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat:no-repeat;    
+    font-family: 'Oleo Script', cursive;
+    overflow: auto;    
+}
+
+div{
+    border-radius: .2em;
+}
+
+.row{
+    margin: 1em 1em;    
+}
+
+.title{
+    font-size: 4.3em;
+    padding: .5em;
+    background: linear-gradient(darkorange, white);
+}
+
+.instructions{
+    background: linear-gradient(orange, white);
+    padding: 1em;
+    line-height: 2em;
+}
+
+p{
+    padding: 0.5em;
+    font-size: 1.5em;
+
+}
+
+.wins-losses{
+    background: linear-gradient(lightblue, white);
+    padding: 1em; 
+    height: 12.2em;   
+    margin-left: 1em;
+    
+}
+
+#announcement{
+    color: red;    
+}
+
+.total-score, .score-board{
+    text-align: center;
+    font-size: 4.3em;
+}
+
+.crystal-board{
+    background: white;
+    padding: 1em;
+}
+
+img{
+    height: 8em;
+    width: 5.5em;
+    margin: 1em;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+.your-score{
+    background: linear-gradient(white,lightgray);
+}

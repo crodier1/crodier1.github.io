@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 title">
+                Crystal Collector!
+            </div>
+
+        </div>
+
+        <div class="row ">
+            <div class="col-md-8 instructions">
+                <p>You will be given a random number at the begining of the game.</p>
+                <p>There are 4 crystals below. By clicking on a crystal below you will add a specific amount to the points of
+                    your total score.</p>
+                <p>You win the game by matching your total score to the random number. You lose when your total score goes over
+                    the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time the game starts, the crystal will have a new random number.</p>
+            </div>
+        </div>
+
+        <div class="row gameboard">
+            <div class="col-md-2 total-score jumbotron"></div>
+            <div class="col-md-4 wins-losses">
+                <p id="announcement"></p>
+                <p>Wins:
+                    <span id="total-wins"></span>
+                </p>
+                <p>Losses:
+                    <span id="total-losses"></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-6 crystal-board">
+
+                <img src="assets/images/blueRupee.png" id="blue">
+
+                <img src="assets/images/GreenRupee.png" id="green">
+
+                <img src="assets/images/purpleRupee.png" id="purple">
+
+                <img src="assets/images/redRupee.jpg" id="red">
+            </div>
+        </div>
+        <div class="row ">
+            <div class="your-score col-md-4">
+                <p>Your Score</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="score-board jumbotron col-md-4"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
