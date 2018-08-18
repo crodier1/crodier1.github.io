@@ -179,7 +179,7 @@ $(document).ready(function () {
         correctAnswers = 0;
         wrongAnswers = 0;
         unanswered = 10;
-        time = 8;
+        time = 60;
 
         clockCounter = setInterval(clockTimer, 1000);
         clockTimer();
