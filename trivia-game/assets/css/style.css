@@ -1,0 +1,56 @@
+body{
+    background-image: url('../../assets/images/constitution.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5em;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+         
+}
+
+.container{
+    background-color: white;    
+    height: 35em;
+    overflow: auto;
+    background-image: url('../../assets/images/constitution-paper.jpg');
+    padding: 2em;
+    box-shadow: 5px 5px 15px 5px #000000;     
+}
+
+#start, #restart{
+    background-color: blueviolet;
+    margin: auto;
+    border: solid black .1em;
+    margin-top: 5em;
+}
+
+h1{
+    font-size: 4em;
+}
+
+#start:hover, #submitAnswers, #restart{
+    cursor: pointer;
+}
+
+p{
+    font-size: 2em;
+}
+
+input[type=radio]{
+    width: 5%;
+    height: .6em;
+}
+
+#submitAnswers{
+    background-color: blueviolet;
+    margin: auto;
+    border: solid black .1em;
+}
+
+#results{
+    margin-top: 5em;
+}
+
+h3{
+    font-size: 3em;
+}
