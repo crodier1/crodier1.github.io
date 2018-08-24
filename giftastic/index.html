@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <style type="text/css">
+        button,
+        .btn,
+        div,
+        form,
+        input,
+        img {
+            margin: 1em;
+            padding: 1em;            
+        }
+
+        img{
+            width: 100%;
+        }
+        
+    </style>
+    
+    <title>GifTastic</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="buttons-view"></div>
+
+        <form id="animal-form">
+            <label for="animal-input">Add Animal</label>
+            <input type="text" id="animal-input">            
+            <p><input id="add-animal" type="submit" value="Add Animal" class="btn btn-info"></p>
+        </form>
+
+        <div class="row" id="animal-view"></div>
+    </div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var animals = ["Chipmunk", "Skunk", "Elephant", "T-Rex"];
+
+            renderButtons();
+
+            //adds new buttons
+            $("#add-animal").on("click", function (event) {
+                event.preventDefault();
+                var newAnimal = $("#animal-input").val().trim();
+                animals.push(newAnimal);
+                renderButtons();
+            });
+
+            //Render Buttons
+            function renderButtons() {
+
+
+                $("#buttons-view").empty();
+
+                for (var i = 0; i < animals.length; i++) {
+
+                    var a = $("<button>");
+                    a.addClass("animal btn btn-danger");
+                    a.attr("data-animal", animals[i]);
+                    a.text(animals[i]);
+                    $("#buttons-view").append(a);
+                }
+
+
+            }
+
+
+            //gets animal gifs when clicked  
+            function displayAnimals() {
+                var animal = $(this).attr("data-animal");
+                var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+                    animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+                $.ajax({
+                    url: queryURL,
+                    method: "GET"
+                }).then(function (response) {
+
+                    console.log(response);
+
+                    var results = response.data;
+
+
+                    for (var i = 0; i < results.length; i++) {
+                        var animalDiv = $("<div>");
+                        animalDiv.addClass("col-md-3");
+                        var p = $("<p>").text("Rated: " + results[i].rating);
+                        var animalImage = $("<img>");
+                        animalImage.addClass("gif")
+                        animalImage.attr("src", results[i].images.fixed_height_still.url);
+                        animalImage.attr("data-still", results[i].images.fixed_height_still.url);
+                        animalImage.attr("data-animate", results[i].images.fixed_height.url);
+                        animalImage.attr("data-state", "still");
+                        animalDiv.append(p);
+                        animalDiv.append(animalImage);
+                        $("#animal-view").prepend(animalDiv);
+                    }
+
+
+
+                });
+            }
+
+            
+            //toggles between still & animated
+            function changeGify() {
+
+
+                var state = $(this).attr("data-state");
+
+
+                if (state === 'still') $(this).attr("data-state", 'animate');
+                if (state === 'animate') $(this).attr("data-state", 'still');
+                console.log(state);
+
+                if (state === 'animate') $(this).attr('src', $(this).attr('data-still'));
+                if (state === 'still') $(this).attr('src', $(this).attr('data-animate'));
+
+            }
+
+            //gives all elements listeners
+            $(document).on("click", ".animal", displayAnimals);
+            $(document).on("click", ".gif", changeGify);
+
+
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
