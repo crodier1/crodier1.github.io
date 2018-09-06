@@ -23,36 +23,46 @@
     </form>
     <div class="output"></div>
 
-    
+
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript">
 
-        var file;        
+        var file;
 
         $(':file').on('change', function () {
-            file = this.files[0];
-            
-            
-        });       
+            file = this.files[0]; 
+        });
 
 
-    
-        $("#submit").on("click", function(event){
+
+        $("#submit").on("click", function (event) {
             event.preventDefault();
-            $.ajax({
-                type: "POST",                
-                url: "http://www.3DTransform.com/api.php",
-                key: "6627840568cd2172441fa18cacbccfaf",
-                file: file,
-                success: function (result) {
-                    console.log(result);
-                },
-                error: function (result) {
-                    console.log(result);
+
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "file": file,
+                "url": "http://www.3dtransform.com/api.php?6627840568cd2172441fa18cacbccfaf=",
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/x-www-form-urlencoded",
+                    "cache-control": "no-cache",
+                    "postman-token": "f3dcac1e-ac77-32c0-fe28-b6aa49401152",
+                    "Access-Control-Allow-Origin": '*',
+                    "Access-Control-Allow-Credentials": true
                 }
-            })
+            }
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+
+                $("#output").html(response);
+            });
+
             
+
         });
 
 
