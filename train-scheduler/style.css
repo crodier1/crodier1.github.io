@@ -1,0 +1,21 @@
+body{
+    padding: 1em;
+}
+
+h1, h3{
+    text-align: center
+}
+
+.addTrain{    
+    border: solid black .05em;
+    border-radius: 1%;
+}
+
+.title{
+    color: white;
+    background-color: blue;    
+}
+
+form{
+    margin: 1em;
+}
