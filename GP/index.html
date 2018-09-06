@@ -17,7 +17,7 @@
     <form>
         <input type="file" name="file" accept=".obj, .3dm, .3ds, .dae, .dxf, .fbx, .iges, .igs, .ply, .skp, .slc, .vdafs, .vda, .vrml, .wrl, .zcp, .zpr"
             id="file-select">
-        <input type="submit" id="submit" onclick="post()">
+        <input type="submit" id="submit">
         <progress value="0" id="prog" min="0" max="100"></progress>
 
     </form>
@@ -33,6 +33,7 @@
         $(':file').on('change', function () {
             file = this.files[0];
             
+            
         });       
 
 
@@ -40,8 +41,8 @@
         $("#submit").on("click", function(event){
             event.preventDefault();
             $.ajax({
-                method: "POST",
-                url: "https://mnutsch-3d-transform.p.mashape.com/http://www.3DTransform.com/api.php",
+                type: "POST",                
+                url: "http://www.3DTransform.com/api.php",
                 key: "6627840568cd2172441fa18cacbccfaf",
                 file: file,
                 success: function (result) {
