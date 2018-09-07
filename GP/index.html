@@ -40,42 +40,22 @@
             event.preventDefault();
 
             $.ajax({
-                url: 'php.php',
+                type:"POST",
+                url: './uploader.php',
+               dataType:'jsonp',
+                contentType:false,                
+                processData:false,
+                data: {file: file},
                 success: function (data) {
                     // this is executed when ajax call finished well
                     console.log(data);
 
                 },
-                error: function (xhr, status, error) {
-                    // executed if something went wrong during call
-                    if (xhr.status > 0) alert('got error: ' + status); // status 0 - when load is interrupted
+                error: function (error) {
+                    console.log(error);
                 }
             });
-
-
-            /*
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "file": file,
-                "url": "http://www.3DTransform.com/api.php",
-                "key": "6627840568cd2172441fa18cacbccfaf",
-                "method": "POST",
-                "headers": {
-                    "content-type": "application/x-www-form-urlencoded",
-                    "cache-control": "no-cache",
-                    "postman-token": "f3dcac1e-ac77-32c0-fe28-b6aa49401152",                    
-                    "Access-Control-Allow-Origin": '*',
-                    "Access-Control-Allow-Credentials": true
-                }
-            }
-
-            $.ajax(settings).done(function (response) {
-                console.log(response);
-
-                $("#output").html(response);
-            });
-            */
+            
 
 
         });
