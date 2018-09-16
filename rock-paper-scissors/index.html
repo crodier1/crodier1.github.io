@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Part 2
+    </title>
+</head>
+
+<body>
+
+    <div id="game">
+        <b>Press "R" for rock, "P" for paper and "S" for scissors</b>
+        <p>You choose: <span id='yourChoice'></span></p>
+        <p>The computer choose: <span id='compChoice'></span></p>
+        <p>Wins:
+            <span id='wins'>0</span>
+        </p>
+        <p>Losses:
+            <span id='losses'>0</span>
+        </p>
+        <p>Ties:
+            <span id='tie'>0</span>
+        </p>
+
+    </div>
+
+    <script type="text/javascript">    
+
+        // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+        var computerChoices = ["r", "p", "s"];
+        var win = 0;
+        var lose = 0;
+        var ties = 0;
+
+        // This function is run whenever the user presses a key.
+        document.onkeyup = function (event) {
+
+            // Determines which key was pressed.
+            var userGuess = event.key;
+
+            // Randomly chooses a choice from the options array. This is the Computer's guess.
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+            // Alerts the key the user pressed (userGuess).
+            alert("User guess: " + userGuess);
+
+            // Alerts the Computer's guess.
+            alert("Computer guess: " + computerGuess);
+
+
+
+            if (userGuess === computerGuess) ties++;
+
+            if (userGuess === 'p' && computerGuess === 'r') win++;
+            if (userGuess === 'r' && computerGuess === 's') win++;
+            if (userGuess === 's' && computerGuess === 'p') win++;
+
+            if (userGuess === 'r' && computerGuess === 'p') lose++;
+            if (userGuess === 's' && computerGuess === 'r') lose++;
+            if (userGuess === 'p' && computerGuess === 's') lose++;
+
+            var winsText = document.getElementById("wins");
+            winsText.textContent = win;
+
+            var lossText = document.getElementById("losses");
+            lossText.textContent = lose;
+
+            var tieText = document.getElementById("tie");
+            tieText.textContent = ties;
+
+            var urChoice = document.getElementById("yourChoice");
+            urChoice.textContent = userGuess;
+
+            var compSelection = document.getElementById("compChoice");
+            compSelection.textContent = computerGuess;
+
+        };
+    </script>
+
+</body>
+
+</html>

@@ -54,20 +54,21 @@
 
         <div class="row contact">
             <div class="col-md-12">
-                    <form>
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name..">
-        
-                            <label for="email">Email</label>
-                            <input type="text" id="email" name="emal" placeholder="Your Email..">
-        
-                            <label for="msg">Message</label>
-                            <textarea type="text" id="message" name="message"></textarea>
-        
-                            <input type="submit" value="Submit">
-        
-        
-                    </form> 
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="input" placeholder="Your name..">
+
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" type="email" class="input" placeholder="myEmail@mail.com">
+
+                    <label for="msg">Message</label>
+                    <textarea type="text" id="message" name="message" class="input"></textarea>
+
+                    <input type="submit" value="Submit" id="submit">
+
+                    <p class="messageSent">Message Sent</p>
+
+                </form>
             </div>
         </div>
 
@@ -84,7 +85,51 @@
         </div>
 
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
 
+        $(".messageSent").hide();
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA5uT_Z3AYOlsigQrWmczgQ7kvtn-LU22k",
+            authDomain: "portfolio-contact-6e11d.firebaseapp.com",
+            databaseURL: "https://portfolio-contact-6e11d.firebaseio.com",
+            projectId: "portfolio-contact-6e11d",
+            storageBucket: "",
+            messagingSenderId: "964184893839"
+        };
+        firebase.initializeApp(config);
+
+        var database = firebase.database(),
+            name = "",
+            email = "",
+            message = "";
+
+        //event listener when button is clickec
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+
+            name = $("#name").val().trim();
+            email = $("#email").val().trim();
+            message = $("#message").val().trim();
+
+            console.log(name, email, message);
+
+            $(".input").val('');
+            $(".messageSent").show();
+
+            var newMessage = {
+                name: name,
+                email: email,
+                message: message
+            };
+
+            database.push(newMessage);
+
+        });
+
+    </script>
 
 
 </body>
