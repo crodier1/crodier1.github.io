@@ -1,0 +1,1 @@
+Animal Gify Game made in JavaScript 
