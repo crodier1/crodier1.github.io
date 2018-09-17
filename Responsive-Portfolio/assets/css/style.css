@@ -1,5 +1,5 @@
-body{
-    background-color: lightslategray;
+body{    
+    background: linear-gradient(white, grey);
 }
 
 header{
@@ -87,6 +87,10 @@ td{
 }
 .portfolioText{
     text-align: center;
+}
+
+#links2{
+    text-indent: 2em;
 }
 
 input[type=text], select, textarea {
