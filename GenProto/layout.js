@@ -92,7 +92,7 @@ var config = {
  //news api
 
  $.ajax({
-    url: "http://api.openweathermap.org/data/2.5/weather?zip=80208,us&APPID=5da73b78d73f631d8a18d27035e182f7",
+    url: "https://api.openweathermap.org/data/2.5/weather?zip=80208,us&APPID=5da73b78d73f631d8a18d27035e182f7",
     method: "GET"
 }).then(function (response) {
     console.log(response);
