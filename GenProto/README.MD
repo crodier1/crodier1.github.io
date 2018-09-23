@@ -1,0 +1,1 @@
+Generation Prototypes is a website built for a 3D Printing startup. I contributed to the JavaScript, APIs & adivising on the jQuery
