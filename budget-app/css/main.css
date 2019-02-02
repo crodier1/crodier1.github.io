@@ -130,3 +130,21 @@ body {
 .expense-item {
   height: 2rem;
 }
+
+.tracker{
+  text-align: center;
+}
+
+.hide-chart{
+  display: none;
+}
+
+.chart{
+  border: 0.15rem solid var(--mainGreen);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+#myChart{
+  margin: auto;
+}

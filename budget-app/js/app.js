@@ -1,5 +1,8 @@
+let label = [];
+let data = [];
+
 class UI {
-  constructor() {
+  constructor() {    
     this.budgetFeedback = document.querySelector(".budget-feedback");
     this.expenseFeedback = document.querySelector(".expense-feedback");
     this.budgetForm = document.getElementById("budget-form");
@@ -13,8 +16,9 @@ class UI {
     this.amountInput = document.getElementById("amount-input");
     this.expenseList = document.getElementById("expense-list");
     this.itemList = [];
-    this.itemID = 0;
+    this.itemID = 0;    
   }
+  
   submitBudgetForm() {
 
     const value = this.budgetInput.value;
@@ -63,6 +67,10 @@ class UI {
         self.expenseFeedback.classList.remove("showItem")
       }, 4000)
     } else {
+
+      //document.querySelector('.hide-chart').classList.remove("hide-chart");
+
+
       let amount = parseInt(amountValue);
       this.expenseInput.value = "";
       this.amountInput.value = "";
@@ -76,6 +84,11 @@ class UI {
       this.itemList.push(expense)
       this.addExpense(expense);
       this.showBalance();
+
+      label.push(expense.title)
+      data.push(expense.amount)
+      buildchart(); 
+
     }
   }
 
@@ -98,7 +111,9 @@ class UI {
     </div>
    </div>`;
 
-    this.expenseList.appendChild(div)
+    this.expenseList.appendChild(div);
+
+
 
 
   }
@@ -128,7 +143,7 @@ class UI {
       return item.id === id;
     })
 
-    this.expenseInput.value = expense[0].title;
+    this.expenseInput.value = expense[0].title;    
     this.amountInput.value = expense[0].amount;
 
     let tempList = this.itemList.filter(item => {
@@ -137,6 +152,24 @@ class UI {
 
     this.itemList = tempList;
     this.showBalance();
+
+    let dataIndex;
+
+    let tempLabel = label.filter((label,index) => {
+      if(label === expense[0].title)dataIndex = index;
+      return label !== expense[0].title
+    });
+
+    
+    let tempData = data.filter((num,index) => {
+      return index !== dataIndex;
+    })
+
+    label = tempLabel;
+    data = tempData;
+
+    buildchart();    
+
   }
   
 
@@ -144,14 +177,37 @@ class UI {
     let id = parseInt(element.dataset.id)
     let parent = element.parentElement.parentElement.parentElement;
     this.expenseList.removeChild(parent);
-    let tempList = this.itemList.filter(item => {
-      return item.id !== id;
+    
+    let expense = this.itemList.filter(item => {
+      return item.id === id;
     })
 
+    let tempList = this.itemList.filter(item => {      
+      return item.id !== id;
+    })    
+
     this.itemList = tempList;
-    this.showBalance();
+    this.showBalance(); 
+
+    let dataIndex;
+
+    let tempLabel = label.filter((label,index) => {
+      if(label === expense[0].title)dataIndex = index;
+      return label !== expense[0].title
+    });
+
+    let tempData = data.filter((num,index) => {
+      return index !== dataIndex;
+    })
+
+    label = tempLabel;
+    data = tempData;
+
+    buildchart();
+    
     
   }
+  
 }
 
 eventListener = () => {
@@ -168,8 +224,8 @@ eventListener = () => {
 
   expenseForm.addEventListener("submit", event => {
     event.preventDefault();
-    ui.submitExpenseForm()
-
+    ui.submitExpenseForm();   
+    
   })
 
   expenseList.addEventListener("click", event => {
@@ -184,5 +240,39 @@ eventListener = () => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  eventListener();
+  eventListener();   
 })
+
+buildchart = () => {  
+  let ctx = document.getElementById('myChart').getContext('2d');
+
+  var chart = new Chart(ctx, {
+
+
+    
+    // The type of chart we want to create
+    type: "doughnut",
+    
+
+    // The data for our dataset
+    data: {
+        labels: label, 
+        //["January", "February", "March", ],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: ["red", "blue", "yellow", "black", "green", "orange", "brown", "purple", "white" ],
+            borderColor: 'rgb(255, 99, 132)',
+            data: data
+            //[0, 10, 5, 2],
+        }]
+    },
+    
+    // Configuration options go here
+    options: {
+        
+        responsive: false
+    }
+});
+
+}
+
