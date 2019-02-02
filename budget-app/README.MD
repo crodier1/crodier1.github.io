@@ -1,6 +1,6 @@
 ## Personal Budget App
 
-[Click Here to Load the Page](https://crodier1.github.io/budget-app/){:target="_blank"}
+[Click Here to Load the Page](https://crodier1.github.io/budget-app/)
 
 * Never go broke again 
 * Free of charge
