@@ -267,7 +267,7 @@ buildchart = () => {
     // Configuration options go here
     options: {
         
-        responsive: true
+        responsive: false
     }
 });
 
