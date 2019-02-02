@@ -68,9 +68,6 @@ class UI {
       }, 4000)
     } else {
 
-      //document.querySelector('.hide-chart').classList.remove("hide-chart");
-
-
       let amount = parseInt(amountValue);
       this.expenseInput.value = "";
       this.amountInput.value = "";
@@ -270,7 +267,7 @@ buildchart = () => {
     // Configuration options go here
     options: {
         
-        responsive: false
+        responsive: true
     }
 });
 

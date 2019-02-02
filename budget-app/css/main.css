@@ -135,10 +135,6 @@ body {
   text-align: center;
 }
 
-.hide-chart{
-  display: none;
-}
-
 .chart{
   border: 0.15rem solid var(--mainGreen);
   padding: 1rem;
