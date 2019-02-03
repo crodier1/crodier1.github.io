@@ -243,31 +243,25 @@ document.addEventListener("DOMContentLoaded", () => {
 buildchart = () => {  
   let ctx = document.getElementById('myChart').getContext('2d');
 
-  var chart = new Chart(ctx, {
-
-
-    
+  var chart = new Chart(ctx, {    
     // The type of chart we want to create
-    type: "doughnut",
-    
+    type: "doughnut",   
 
     // The data for our dataset
     data: {
-        labels: label, 
-        //["January", "February", "March", ],
+        labels: label,         
         datasets: [{
             label: "My First dataset",
             backgroundColor: ["red", "blue", "yellow", "black", "green", "orange", "brown", "purple", "white" ],
             borderColor: 'rgb(255, 99, 132)',
-            data: data
-            //[0, 10, 5, 2],
+            data: data            
         }]
     },
     
     // Configuration options go here
     options: {
         
-        responsive: false
+        responsive: true
     }
 });
 
