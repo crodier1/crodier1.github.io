@@ -2,140 +2,113 @@
 <HTML lang='eng-us'>
 
 <head>
-    <meta charset='UTF-8'>
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-        crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Social Media -->
+    <meta property="og:site_name" content="Christian Rodier Portfolio" />
+    <meta property="og:title" content="Contact" />
+    <meta property="og:description" content="Don't be shy. Contact me here." />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/19158684?v=3">
+    <meta property="og:url" content="https://crodier1.github.io/Responsive-Portfolio/contact.html">
+    <meta property="og:type" content="coding Portfolio" />
+
+
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Google Fonts    -->
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+    <title>My Portfolio</title>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 name nameCol">
-                    <h2 class="name">Christian Rodier</h2>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Christian Rodier</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">About </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="contact.html">Contact<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
 
+        </div>
+    </nav>
 
-                <div class="col-md-9 links">
-                    <ul class="navbarNav">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">About</a>
-                        </li>
-                    </ul>
+    <div class="container-fluid">
 
-                    <ul>
-                        <li class="nav-item">
-                            <a href="portfolio.html" class="nav-link">Portfolio</a>
-                        </li>
-                    </ul>
+        <div class="row content">
+            <div class="col-md-1 sides"></div>
+            <div class="col-md-10 main contact">
 
-                    <ul>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact</span>
+                    <p class="mainText">Mobile: 801-663-8299</p>
+
+                    <p class="mainText">Email: crodier (at) protonmail.com</p>
+                
+                
+                    <p id="links2">
+                            <a href="https://github.com/crodier1" target="_blank">
+                                GitHub Repository
                             </a>
-                        </li>
-                    </ul>
-                </div>
+                        </p>
+        
+                        <p id="links2">
+                            <a href="https://www.linkedin.com/in/christian-rodier-36b58974/" target="_blank">
+                                LinkedIn Profile
+                            </a>
+                        </p>
+        
+                        <p id="links2">
+                            <a href="assets/resumePDF.pdf" target="_blank">
+                                Resume
+                            </a>
+                        </p>
+                
+
 
             </div>
-        </div>
 
-    </header>
+            <div class="col-md-1 sides"></div>
 
-    <div class="container content">
-        <div class="row title">
-            <h1>Contact</h1>
-        </div>
-
-
-        <div class="row contact">
-            <div class="col-md-12">
-                <form>
-                    <p>Christian Rodier <br>
-                        801-663-8299 <br>
-                        <a href="mailto:crodier@protonmail.com">crodier@protonmail.com</a>
-                        
-                    </p>
-                    <!-- <label for="name">Name</label>
-                    <input type="text" id="name" name="name" class="input" placeholder="Your name..">
-
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email" type="email" class="input" placeholder="myEmail@mail.com">
-
-                    <label for="msg">Message</label>
-                    <textarea type="text" id="message" name="message" class="input"></textarea>
-
-                    <input type="submit" value="Submit" id="submit">
-
-                    <p class="messageSent">Message Sent</p> -->
-
-                </form>
-            </div>
         </div>
 
 
     </div>
 
 
-    <footer>
-        <div class="row footerRow">
-            <div class="col-md-12">
-                <center>Copyright &copy;</center>
-            </div>
 
-        </div>
-
-    </footer>
-    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-
-        $(".messageSent").hide();
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyA5uT_Z3AYOlsigQrWmczgQ7kvtn-LU22k",
-            authDomain: "portfolio-contact-6e11d.firebaseapp.com",
-            databaseURL: "https://portfolio-contact-6e11d.firebaseio.com",
-            projectId: "portfolio-contact-6e11d",
-            storageBucket: "",
-            messagingSenderId: "964184893839"
-        };
-        firebase.initializeApp(config);
-
-        var database = firebase.database(),
-            name = "",
-            email = "",
-            message = "";
-
-        //event listener when button is clickec
-        $("#submit").on("click", function (event) {
-            event.preventDefault();
-
-            name = $("#name").val().trim();
-            email = $("#email").val().trim();
-            message = $("#message").val().trim();
-
-            console.log(name, email, message);
-
-            $(".input").val('');
-            $(".messageSent").show();
-
-            var newMessage = {
-                name: name,
-                email: email,
-                message: message
-            };
-
-            database.push(newMessage);
-
-        });
-
-    </script>
+    <div class="card-footer text-muted footer footer">
+        Copyright &copy;
+    </div>
 
 
 </body>

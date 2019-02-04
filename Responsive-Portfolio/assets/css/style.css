@@ -1,6 +1,91 @@
 body{    
-    background-image: url("http://www.sarasotalearningcottage.com/wp-content/uploads/2013/07/space-background.jpg");
     font-family: "Jura";
+}
+
+
+.navbar{
+    top: 0%;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    border-bottom: 1px solid #49fb35;
+}
+
+.container-fluid{
+    background-color: #333;
+}
+
+
+
+.sides{
+    background-image: url("http://www.space.com/images/i/000/056/169/original/outlier-galaxy-ugc-4879-1600.jpg?interpolation=lanczos-none&fit=around|1600:1200&crop=1600:1200;*,*");
+
+}
+
+
+.content{
+    /* margin-top:1rem;  */
+    background-color: #333;  
+   
+}
+
+.main{
+    background-color: #333;    
+    padding: 6rem 2rem 2rem 2rem; 
+    border-left: 1px solid #49fb35;
+    border-right: 1px solid #49fb35;
+
+}
+
+.portfolio{
+    padding: 6rem 2rem 2rem 2rem; 
+    border-left: 1px solid #49fb35;
+    border-right: 1px solid #49fb35;
+
+}
+
+.meImg{    
+    border-radius: 50%; 
+    width: 20rem;
+    margin: auto;
+    display: block;
+}
+
+h1{
+    
+    color: #4aaaa5;
+}
+
+
+
+.paragraph1{
+    text-indent: 5%;
+}
+
+.mainText{
+    color: white;
+    font-size: large;
+}
+
+
+
+
+html,body{    
+    height: 100%;
+    margin: 0;
+    font-family: "Jura";
+}
+
+.contact{
+    /* height: 100%; */
+    padding-bottom: 100%;
+}
+
+.footer{
+    background-color: #333;
+    bottom: 0;
+    color: white;
+    border-top: 1px solid #49fb35;
 }
 
 header{
@@ -37,6 +122,13 @@ ul{
     padding: .8em .8em;    
 }
 
+.navbar{
+    top: 0%;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
 .nav-link{
     color: white;    
 }
@@ -47,31 +139,24 @@ ul{
 
 
 .content{
+    
     background-color: white;    
-    margin-bottom: 1em;
+   
 }
 
-h1{
-    
-    color: #4aaaa5;
-}
+
 
 .title{
     padding: 1em;
     border-bottom: solid #dddddd .1em;
 }
 
-.aboutMe, .portfolio, .contact{
+.aboutMe{
     padding: 1em;
     font-size: 1.5em;    
 }
 
-.meImg{
-    height: 10em;
-    width: 15em;
-    float: left;
-    margin: .5em;
-}
+
 
 p, .bioText{
     line-height: 2.5em;
@@ -79,14 +164,14 @@ p, .bioText{
     
 }
 
-.paragraph1{
-    text-indent: 5%;
-}
+
 
 .portfolioImg{
     height: 10em;
     width: 10em;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    margin: auto;
+    display: block;
 }
 
 td{
@@ -157,7 +242,7 @@ center{
     font-weight: bold;
 }
 
-@media screen and (max-width: 980px) {
+/* @media screen and (max-width: 980px) {
     body {
         background-color: #333;
       }  
@@ -179,4 +264,7 @@ center{
         position: static;
     } 
 
-}
+} */
+
+
+
